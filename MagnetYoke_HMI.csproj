@@ -7,6 +7,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
 	<UseWindowsForms>true</UseWindowsForms>
+	<Platforms>AnyCPU;x86</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,9 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="FM2002\Model\" />
-    <Folder Include="FM2002\ViewModel\" />
-    <Folder Include="FM2002\View\" />
     <Folder Include="Robot\Model\" />
     <Folder Include="Robot\View\" />
     <Folder Include="Robot\ViewModel\" />
@@ -29,6 +27,7 @@
   <ItemGroup>
     <PackageReference Include="Beckhoff.TwinCAT.Ads" Version="6.2.335" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.135" />
+    <PackageReference Include="System.IO.Ports" Version="6.0.0" />
   </ItemGroup>
 
 </Project>

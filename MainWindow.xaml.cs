@@ -49,6 +49,8 @@ namespace MagnetYoke_HMI
             {
                 var Pos = sc_spel.GetRobotPos(SpelRobotPosType.World, 0, 0, 0);
                 var Ja = sc_spel.GetRobotPos(SpelRobotPosType.Joint,0,0,0);
+                var sts = sc_spel.ErrorOn;
+                
                 sc_spel.RunDialog(SpelDialogs.RobotManager);
             }
             catch(Exception ex) 

@@ -2,9 +2,16 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:MagnetYoke_HMI"
+             xmlns:CV ="clr-namespace:IConverter"
              xmlns:LG ="clr-namespace:Logger"
+             xmlns:FM2002_VM ="clr-namespace:FM2002.ViewModel"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+
+        <CV:Connect_Converter x:Key="Connect_CV"/>
+
+        <FM2002_VM:FM2002_ViewModel x:Key="FM_VM"/>
+        
         
     </Application.Resources>
 </Application>
