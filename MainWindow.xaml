@@ -17,5 +17,7 @@
         <Grid Grid.Column="1">
             <FM_View:FM2002_View/>
         </Grid>
+        <Button x:Name="button1" Content="Button" HorizontalAlignment="Left" Height="48" Margin="23,87,0,0" VerticalAlignment="Top" Width="76" Click="button1_Click"/>
+        <Button x:Name="button2" Content="Button" HorizontalAlignment="Left" Height="44" Margin="42,162,0,0" VerticalAlignment="Top" Width="77" Click="button2_Click"/>
     </Grid>
 </Window>

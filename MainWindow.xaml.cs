@@ -10,6 +10,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Forms;
 using RCAPINet;
+using Model;
 
 namespace MagnetYoke_HMI
 {
@@ -22,10 +23,12 @@ namespace MagnetYoke_HMI
         {
             InitializeComponent();
 
-            Epson_Robot_Initial();
+            //Epson_Robot_Initial();
         }
 
         private RCAPINet.Spel sc_spel;
+
+        private PLC_app PLC_temp;
 
         private void Epson_Robot_Initial()
         {
@@ -58,6 +61,17 @@ namespace MagnetYoke_HMI
                 Console.Write(ex.Message);
             }
 
+        }
+
+        private async void button1_Click(object sender, RoutedEventArgs e)
+        {
+            PLC_temp = await PLC_app.Create_PLC_app("192.168.0.4.1.1",851);
+        }
+
+        private async void button2_Click(object sender, RoutedEventArgs e)
+        {
+            TimeSpan t = TimeSpan.FromMilliseconds(333);
+            await PLC_temp.ADS_COM.Write("Valve_Param.Valve_Array[1].Open_Time", t);
         }
     }
 }

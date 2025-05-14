@@ -18,10 +18,11 @@ using System.Collections.ObjectModel;
 using System.Reflection;
 using MVVM_Core;
 using Logger;
+using System.Security.Cryptography;
 
 namespace Communication
 {
-    public class ADS_lib : NotificationBinding
+    public class ADS_lib : ViewModelBase
     {
         private AdsClient ADS_COM = new AdsClient();
         private CancellationToken cancel = CancellationToken.None;
@@ -29,23 +30,22 @@ namespace Communication
 
         #region Connect
 
-        private string _NetID;
         public string NetID
         {
-            get { return _NetID; }
-            set { _NetID = value; OnPropertyChanged(); }
+            get => GetF<string>();
+            set => SetF(value);
         }
 
-        private int _Port;
         public int Port
         {
-            get { return _Port; }
-            set { _Port = value; OnPropertyChanged(); }
+            get => GetF<int>();
+            set => SetF(value);
         }
 
         public bool IsConnect
         {
-            get { return ADS_COM.IsConnected; }
+            get => GetF<bool>();
+            set => SetF(value);
         }
 
         public async Task<bool> Connect(string netid, int port)
@@ -63,29 +63,60 @@ namespace Communication
 
                     if (!rst) ADS_COM.Disconnect();
 
-                    OnPropertyChanged(nameof(IsConnect));
-
-                    return rst;
+                    IsConnect = rst;
                 }
                 else
                 {
-                    OnPropertyChanged(nameof(IsConnect));
-                    return false;
+                    IsConnect = false;
                 }
 
             }
             catch(Exception e) 
             {
                 Console.WriteLine( e.Message );
-                OnPropertyChanged(nameof(IsConnect));
-                return false;
+                IsConnect = false;
             }
+
+            return IsConnect;
         }
+
+        public async Task<bool> Connect()
+        {
+            try
+            {
+                ADS_COM.Connect(NetID, Port);
+
+                if (ADS_COM.IsConnected)
+                {
+                    bool rst = await Relaod_Symbols();
+
+                    if (!rst) ADS_COM.Disconnect();
+
+                    IsConnect = rst;
+                }
+                else
+                {
+                    IsConnect = false;
+                }
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+
+                IsConnect = false;
+            }
+
+            return IsConnect;
+        }
+
 
         public void Disconnect()
         {
             ADS_COM.Disconnect();
-            OnPropertyChanged(nameof(IsConnect));
+
+            IsConnect = false;
+
         }
 
         #endregion
@@ -164,7 +195,6 @@ namespace Communication
             {
                 return resultRead.Value;
             }
-
         }
 
 
@@ -567,14 +597,5 @@ namespace Communication
 
 
 
-    }
-
-    public class NotificationBinding: INotifyPropertyChanged
-    {
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged([CallerMemberName] string name = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-        }
     }
 }
