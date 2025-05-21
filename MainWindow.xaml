@@ -12,12 +12,13 @@
             <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="13*"/>
         </Grid.ColumnDefinitions>
-        
+
         <Button Grid.Column="0" x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="16,21,0,0" VerticalAlignment="Top" Height="39" Width="71" Click="button_Click"/>
         <Grid Grid.Column="1">
             <FM_View:FM2002_View/>
         </Grid>
         <Button x:Name="button1" Content="Button" HorizontalAlignment="Left" Height="48" Margin="23,87,0,0" VerticalAlignment="Top" Width="76" Click="button1_Click"/>
         <Button x:Name="button2" Content="Button" HorizontalAlignment="Left" Height="44" Margin="42,162,0,0" VerticalAlignment="Top" Width="77" Click="button2_Click"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="9,285,0,0" TextWrapping="Wrap" Text="{Binding Axis_Ctrl.Force_Target, Source={StaticResource PLC_VM}}" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Window>

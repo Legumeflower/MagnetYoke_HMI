@@ -10,7 +10,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Forms;
 using RCAPINet;
-using Model;
+using Tc.Model;
 
 namespace MagnetYoke_HMI
 {
@@ -28,7 +28,6 @@ namespace MagnetYoke_HMI
 
         private RCAPINet.Spel sc_spel;
 
-        private PLC_app PLC_temp;
 
         private void Epson_Robot_Initial()
         {
@@ -63,9 +62,17 @@ namespace MagnetYoke_HMI
 
         }
 
+        private PLC_app PLC_temp;
         private async void button1_Click(object sender, RoutedEventArgs e)
         {
-            PLC_temp = await PLC_app.Create_PLC_app("192.168.0.4.1.1",851);
+            PLC_temp = new PLC_app();
+
+            PLC_temp.ADS_COM.NetID = "192.168.0.4.1.1";
+
+            PLC_temp.ADS_COM.Port = 851;
+
+            PLC_temp.Initial();
+            //PLC_temp = await PLC_app.Create_PLC_app("192.168.0.4.1.1",851);
         }
 
         private async void button2_Click(object sender, RoutedEventArgs e)

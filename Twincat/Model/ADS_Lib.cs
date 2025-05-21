@@ -20,7 +20,7 @@ using MVVM_Core;
 using Logger;
 using System.Security.Cryptography;
 
-namespace Communication
+namespace Tc.Communication
 {
     public class ADS_lib : ViewModelBase
     {

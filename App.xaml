@@ -5,13 +5,15 @@
              xmlns:CV ="clr-namespace:IConverter"
              xmlns:LG ="clr-namespace:Logger"
              xmlns:FM2002_VM ="clr-namespace:FM2002.ViewModel"
+             xmlns:TC_VM ="clr-namespace:Tc.ViewModel"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
 
         <CV:Connect_Converter x:Key="Connect_CV"/>
 
         <FM2002_VM:FM2002_ViewModel x:Key="FM_VM"/>
-        
+
+        <TC_VM:PLC_ViewModel x:Key="PLC_VM"/>
         
     </Application.Resources>
 </Application>

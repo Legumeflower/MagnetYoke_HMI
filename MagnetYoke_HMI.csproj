@@ -20,7 +20,6 @@
     <Folder Include="Robot\Model\" />
     <Folder Include="Robot\View\" />
     <Folder Include="Robot\ViewModel\" />
-    <Folder Include="Twincat\ViewModel\" />
     <Folder Include="Twincat\View\" />
   </ItemGroup>
 
