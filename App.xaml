@@ -13,7 +13,7 @@
 
         <FM2002_VM:FM2002_ViewModel x:Key="FM_VM"/>
 
-        <TC_VM:PLC_ViewModel x:Key="PLC_VM"/>
+        <!--<TC_VM:PLC_ViewModel x:Key="PLC_VM"/>-->
         
     </Application.Resources>
 </Application>

@@ -14,7 +14,7 @@ using Microsoft.VisualBasic;
 using static Tc.Model.PLC_Parameter.Valve_Ctrl_Struct;
 using static Tc.Model.PLC_Parameter.Axis_Param_Struct.Home_Param_Struct;
 using static Tc.Model.PLC_Parameter.Axis_Ctrl_Struct;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+//using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using MVVM_Core;
 using System.Configuration;
 using static Tc.Model.PLC_Parameter.Feeder_Struct;

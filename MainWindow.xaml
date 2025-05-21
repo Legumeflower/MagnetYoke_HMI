@@ -19,6 +19,6 @@
         </Grid>
         <Button x:Name="button1" Content="Button" HorizontalAlignment="Left" Height="48" Margin="23,87,0,0" VerticalAlignment="Top" Width="76" Click="button1_Click"/>
         <Button x:Name="button2" Content="Button" HorizontalAlignment="Left" Height="44" Margin="42,162,0,0" VerticalAlignment="Top" Width="77" Click="button2_Click"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="9,285,0,0" TextWrapping="Wrap" Text="{Binding Axis_Ctrl.Force_Target, Source={StaticResource PLC_VM}}" VerticalAlignment="Top" Width="120"/>
+        <!--<TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="9,285,0,0" TextWrapping="Wrap" Text="{Binding PLC_Param.Axis_Ctrl_Array.ID, Source={StaticResource PLC_VM}}" VerticalAlignment="Top" Width="120"/>-->
     </Grid>
 </Window>

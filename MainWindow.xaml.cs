@@ -8,7 +8,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Windows.Forms;
 using RCAPINet;
 using Tc.Model;
 
@@ -21,6 +20,7 @@ namespace MagnetYoke_HMI
     {
         public MainWindow()
         {
+            
             InitializeComponent();
 
             //Epson_Robot_Initial();

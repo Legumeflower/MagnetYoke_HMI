@@ -11,17 +11,15 @@ namespace Tc.ViewModel
 {
     public class PLC_ViewModel : ViewModelBase
     {
+
+        public PLC_Parameter PLC_Param;
+
+
         public PLC_ViewModel()
         {
-            Axis_Ctrl =  new Axis_Ctrl_Struct() { ID = 1};
+            PLC_Param = new PLC_Parameter();
         }
 
-
-        public Axis_Ctrl_Struct Axis_Ctrl
-        {
-            get => GetF<Axis_Ctrl_Struct>();
-            set => SetF(value);
-        }
 
     }
 }
