@@ -122,7 +122,7 @@ namespace Tc.Model
                 return list;
             }
         }
-        public GVL_Struct GVL;
+        public GVL_Struct GVL { get; set; }
 
         public class SYSTEM_VAR_Struct : ViewModelBase
         {
@@ -148,7 +148,7 @@ namespace Tc.Model
             }
 
         }
-        public SYSTEM_VAR_Struct SYSTEM_VAR;
+        public SYSTEM_VAR_Struct SYSTEM_VAR { get; set; }
 
         public class IO_Param_Struct : ViewModelBase
         {
@@ -309,7 +309,7 @@ namespace Tc.Model
                 return list;
             }
         }
-        public IO_Param_Struct IO_Param;
+        public IO_Param_Struct IO_Param { get; set; }
 
         public class Valve_Setting_Struct : ViewModelBase
         {
@@ -345,7 +345,7 @@ namespace Tc.Model
                 return list;
             }
         }
-        public ObservableCollection<Valve_Setting_Struct> Valve_Setting_Array;
+        public ObservableCollection<Valve_Setting_Struct> Valve_Setting_Array { get; set; }
 
         public class Valve_Ctrl_Struct : ViewModelBase
         {
@@ -385,7 +385,7 @@ namespace Tc.Model
                 return list;
             }
         }
-        public ObservableCollection<Valve_Ctrl_Struct> Valve_Ctrl_Array;
+        public ObservableCollection<Valve_Ctrl_Struct> Valve_Ctrl_Array { get; set; }
 
         public class Axis_Status : ViewModelBase
         {
@@ -441,7 +441,7 @@ namespace Tc.Model
                 return list;
             }
         }
-        public ObservableCollection<Axis_Status> Axis_Status_Array;
+        public ObservableCollection<Axis_Status> Axis_Status_Array { get; set; }
 
         public class Axis_Param_Struct : ViewModelBase
         {
@@ -556,7 +556,7 @@ namespace Tc.Model
                 return list;
             }
         }
-        public ObservableCollection<Axis_Param_Struct> Axis_Param_Array;
+        public ObservableCollection<Axis_Param_Struct> Axis_Param_Array { get; set; }
 
         public class Axis_Ctrl_Struct : ViewModelBase
         {
@@ -618,7 +618,7 @@ namespace Tc.Model
                 return list;
             }
         }
-        public ObservableCollection<Axis_Ctrl_Struct> Axis_Ctrl_Array;
+        public ObservableCollection<Axis_Ctrl_Struct> Axis_Ctrl_Array { get; set; }
 
         public class Feeder_Struct : ViewModelBase
         {
@@ -669,7 +669,7 @@ namespace Tc.Model
             }
 
         }
-        public Feeder_Struct Feeder_Param;
+        public Feeder_Struct Feeder_Param { get; set; }
 
 
         public string Update_GVL_text;

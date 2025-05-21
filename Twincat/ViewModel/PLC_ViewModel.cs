@@ -12,7 +12,7 @@ namespace Tc.ViewModel
     public class PLC_ViewModel : ViewModelBase
     {
 
-        public PLC_Parameter PLC_Param;
+        public PLC_Parameter PLC_Param { get; set; }
 
 
         public PLC_ViewModel()
